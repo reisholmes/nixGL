@@ -114,6 +114,7 @@
 			font_size = 11;
 			titlebar-only = "yes";
 		};
+		themeFile = "Nord";
 	};
 	programs.zsh = {
 	  enable = true;
@@ -158,6 +159,7 @@
 		
 			plugins = [
 				"git"
+				"z"
 			];
 		};
 	};
