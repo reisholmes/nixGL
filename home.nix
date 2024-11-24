@@ -45,12 +45,18 @@
 		git
 		lf
 		jq
+		ripgrep
 		tree
 		vim
 		wget
 		xclip
 		yq
+		
+		# Terminal fonts
 		(nerdfonts.override {fonts = [ "Hack" ]; })
+
+		# Coding
+		go
 
 		pkgs.nixgl.nixGLIntel # change this to what you need, find options in nixgl repo, use `home-manager switch --impure` when using nvidia or build will fail
 # TODO: Explorer setting config options via packages
