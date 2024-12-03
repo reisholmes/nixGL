@@ -48,6 +48,7 @@
 		git
 		lf
 		jq
+		markdownlint-cli
 		ripgrep
 		tree
 		vim
