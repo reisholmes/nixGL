@@ -1,6 +1,9 @@
 { config, pkgs, nixgl, allowed-unfree-packages, lib, ... }:
 
 {
+	# Run / Reload config with
+	# nix run nixpkgs#home-manager -- switch --flake .
+
 	# Home Manager needs a bit of information about you and the paths it should
 	# manage.
 	home.username = "reis";
@@ -57,6 +60,8 @@
 
 		# Coding
 		go
+		# nix lsp requirement
+		nixd
 
 		# Editor as neovim, don't configure it in Nix tho
 		# https://github.com/dam9000/kickstart-modular.nvim?tab=readme-ov-file    
@@ -142,20 +147,23 @@
 		# shows wrapping a package which requires nixGL and setting config options for it
 		package = (config.lib.nixGL.wrap pkgs.kitty);
 		enable = true;
+		keybindings = {
+			"ctrl+t" = "launch --cwd=current --type=tab";
+		};
 		settings = {
 			active_border_color = "none";
-			background_opacity = 0.90;
+			background_opacity = 0.93;
 			draw_minimal_borders = "yes";
 			font_size = 11;
 			titlebar-only = "yes";
 		};
-		themeFile = "Nord";
+		themeFile = "Catppuccin-Macchiato";
 	};
 
 	# LazyGit
 	programs.lazygit = {
 		enable = true;
-		
+
 		settings = {
 			gui.nerdFontsVersion = "3";
 		};

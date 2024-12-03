@@ -8,11 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
- 		nixgl = {
-			url = "github:nix-community/nixGL";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
- };
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
 
   outputs = { nixgl, nixpkgs, home-manager, ... }:
     let
@@ -24,9 +24,9 @@
         ];
       };
 
-		#pkgs = nixpkgs.legacyPackages.${system};
-    
-		in {
+      #pkgs = nixpkgs.legacyPackages.${system};
+
+    in {
       homeConfigurations."reis" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
@@ -36,9 +36,9 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
-      	extraSpecialArgs = {
+        extraSpecialArgs = {
           inherit nixgl;
-				};
-			};
+        };
+      };
     };
 }
